@@ -1,0 +1,88 @@
+.header {
+    height: 80px;
+    padding: 0 3%;
+    background-color: rgb(220, 220, 220);
+    color: rgb(28, 160, 184);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.nameCompany {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    margin-right: 120px;
+    background-color: rgb(55, 55, 55);
+}
+
+.name {
+    font-size: 45px;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.btnLogin {
+    width: 190px;
+    height: 45px;
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(28, 160, 184);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+
+}
+
+.btnLogin:hover {
+    color: aliceblue;
+    background-color:rgb(28, 160, 184)
+    
+}
+
+@media (max-width: 1292px) {
+    .name { font-size: 35px; }
+  
+    .user { font-size: 12px; }
+  
+    .logo { display: none; }
+  
+    .btnLogin { 
+          width: 145px;
+          height: 35px;
+          font-size: 13px; 
+      }
+  }
+
+  @media (max-width: 686px) {
+  .name { font-size: 20px; }
+
+  .user { font-size: 12px; }
+
+  .logo { display: none; }
+
+  .btnLogin { 
+        width: 75px;
+        height: 30px;
+        font-size: 10px; 
+    }
+}

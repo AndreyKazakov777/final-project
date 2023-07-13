@@ -1,0 +1,41 @@
+.footer {
+    height: 55px;
+    padding: 0 3%;
+    background-color: rgb(220, 220, 220);
+    color: rgb(47, 79, 79);
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.contact {
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.footer a {
+    color: rgb(47, 79, 79);
+}
+
+.footer a:hover {
+    color: rgb(150, 150, 150);
+}
+
+@media (max-width: 735px) {
+
+    .content {
+      flex-direction: column;
+      justify-content: center;
+    }
+}
+  
