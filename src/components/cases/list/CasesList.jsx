@@ -10,7 +10,6 @@ import CasesListItem from '../list-item/CasesListItem'
 const axios = require('axios').default
 
 const CasesList = () => {
-    const dataCases = data.cases
 
     const user = useSelector(state => state.appReducer.activeUser)
     const token = useSelector(state => state.appReducer.activeToken)

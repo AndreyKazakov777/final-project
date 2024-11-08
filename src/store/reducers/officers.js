@@ -16,19 +16,16 @@ const initialState = {
 function officersReducer (state = initialState, action) {
     switch (action.type) {
         case actionTypes.SET_OFFICERS:
-            return {...state, officers: action.officers }
-            break
+            return {...state, officers: action.officers }     
         case actionTypes.UNSET_OFFICERS:
             return {...state, officers: initialState}
-            break
         case actionTypes.SET_LOADED_OFFICERS:
-                return {...state, loadedOfficers: action.loaded}
-                break
+                return {...state, loadedOfficers: action.loaded}      
         case actionTypes.DELETE_OFFICER:
             return {...state,
 			    officers: state.officers.filter(item => item._id !== action.id)
 			}
-            break
+            
         case actionTypes.EDIT_OFFICER:
             return {...state,
                 officers: state.officers.map(item => {
@@ -39,10 +36,9 @@ function officersReducer (state = initialState, action) {
                     }
                 })
             }
-            break
+            
         case actionTypes.ADD_OFFICER:
-            return {...state, officers: [...state.officers, action.officer]}
-            break
+            return {...state, officers: [...state.officers, action.officer]}  
         default:
             return state
     }

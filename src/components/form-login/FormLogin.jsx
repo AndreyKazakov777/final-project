@@ -1,7 +1,7 @@
 import css from './FormLogin.module.css'
 import close from './close.png'
 import { SERVER, REQUESTS } from '../../config'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setUser, setToken } from '../../store/actionCreators/app'
@@ -32,25 +32,25 @@ const FormLogin = () => {
         navigate('/')
     }
 
-    const checkToken = () => {
-        const token = JSON.parse(localStorage.getItem("token"))
-        if (token) {
-            axios
-                .get(SERVER +  REQUESTS.GET_TOKEN, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: 'Bearer ' + token
-                    }
-                })
-                .then(response => {
-                    if (response.data) {
-                        setEmail(response.data.data.user.email)
-                        setIsLoading (false)
-                    }
-                })
-                .catch(error => { console.error(error) })
-        }
-    }
+    // const checkToken = () => {
+    //     const token = JSON.parse(localStorage.getItem("token"))
+    //     if (token) {
+    //         axios
+    //             .get(SERVER +  REQUESTS.GET_TOKEN, {
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                     Authorization: 'Bearer ' + token
+    //                 }
+    //             })
+    //             .then(response => {
+    //                 if (response.data) {
+    //                     setEmail(response.data.data.user.email)
+    //                     setIsLoading (false)
+    //                 }
+    //             })
+    //             .catch(error => { console.error(error) })
+    //     }
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault()

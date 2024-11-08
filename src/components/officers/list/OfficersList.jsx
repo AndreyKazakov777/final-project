@@ -11,7 +11,6 @@ import OfficersListItem from '../list-item/OfficersListItem'
 const axios = require('axios').default
 
 const OfficersList = () => {
-    const dataOfficers = data.officers
 
     const user = useSelector(state => state.appReducer.activeUser)
     const token = useSelector(state => state.appReducer.activeToken)

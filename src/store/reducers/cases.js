@@ -23,18 +23,14 @@ function casesReducer (state = initialState, action) {
     switch (action.type) {
         case actionTypes.SET_CASES:
             return {...state, cases: action.cases}
-            break
         case actionTypes.UNSET_CASES:
             return {...state, cases: initialState}
-            break
         case actionTypes.SET_LOADED_CASES:
-                return {...state, loadedCases: action.loaded}
-                break
+            return {...state, loadedCases: action.loaded}
         case actionTypes.DELETE_CASE:
             return {...state,
 				cases: state.cases.filter(item => item._id !== action.id)
 			}
-            break
         case actionTypes.EDIT_CASE:
             return {...state,
                 cases: state.cases.map(item => {
@@ -45,10 +41,8 @@ function casesReducer (state = initialState, action) {
                     }
                 })
             }
-            break
         case actionTypes.ADD_CASE:
             return {...state, cases: [...state.cases, action.case]}
-            break
         default:
             return state
     }

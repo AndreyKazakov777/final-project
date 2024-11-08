@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+Задача:
+Компания, занимающаяся прокатом велосипедов, испытывает проблемы с частой кражей их имущества (велосипедов). Как возможное решение проблемы, компания хочет вести учёт этих случаев и отслеживать прогресс. Их собственные разработчики уже подготовили серверную часть приложения, вам же требуется реализовать клиентскую часть.
+Клиентская часть предназначена как для сотрудников компании, так и для обычных пользователей. Обычному пользователю доступна только ограниченная часть функционала: главная страница и страница с возможностью сообщить о новом случае кражи.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Функциональные требования:
+Главная страница
+Главная страница должна содержать текстовое описание сервиса, возможно, картинки на ваш выбор. Данная страница доступна всем пользователям без авторизации.
 
-## Available Scripts
+Форма авторизации
+Форму авторизации можете расположить на главной странице, в шапке сайта или на отдельной странице — на ваше усмотрение. У авторизованных пользователей должна быть возможность выйти из учетной записи.
 
-In the project directory, you can run:
+Сообщить о краже
+«Сообщить о краже» должна содержать форму для отправки информации об украденном велосипеде. Форма должна содержать следующие поля:
+ -Номер лицензии (обязательное поле);
+ -ФИО клиента (обязательное поле);
+ -Тип велосипеда (выпадающий список с заранее определенными вариантами, обязательное поле);
+ -Цвет велосипеда;
+ -Дата кражи;
+ -Дополнительная информация.
+Страница должна быть доступна всем пользователям без авторизации. Однако, если форму заполняет авторизованный сотрудник (например, если клиент сообщил о краже по телефону), ему доступно ещё одно дополнительное поле: ответственный сотрудник. Поле представляет собой выпадающий список с возможностью выбора из списка всех одобренных сотрудников, которые есть в базе.
 
-### `npm start`
+Страница регистрации
+На странице регистрации должна находиться форма регистрации со следующими полями:
+ -E-mail (обязательное поле);
+ -Пароль (обязательное поле);
+ -Имя;
+ -Фамилия;
+ -Client ID (обязательное поле).
+При отправке формы регистрации в базе данных создаётся новый сотрудник. Первый созданный сотрудник с конкретным client ID автоматически получит статус одобренного, остальных сотрудников нужно будет одобрить вручную.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Сообщения о кражах
+Данная страница должна содержать список всех известных случаев краж (это может быть таблица). Отображать служебные поля, например, clientId не нужно. Должна быть возможность удалить сообщение. При клике на одно сообщение из списка должна открываться его детальная страница.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ответственные сотрудники
+Данная страница должна содержать список всех доступных сотрудников. Служебные поля (id, clientId, password) отображать не нужно. Должна быть возможность удалить сотрудника. При клике на одну запись из списка должна открываться детальная страница данного сотрудника.
 
-### `npm test`
+Детальная страница сотрудника
+На этой странице должна содержаться детальная информация по сотруднику с возможностью редактирования. Нельзя редактировать поля email и clientId. Должна быть возможность одобрить сотрудника/снять одобрение.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
